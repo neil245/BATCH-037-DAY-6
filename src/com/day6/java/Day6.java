@@ -4,22 +4,24 @@ import java.util.Scanner;
 
 public class Day6 {
 	static int n;
-	static int sum =0;
+	static int flag =0;
 public static void main(String[] args) {
-System.out.println("Enter a number to check whether it is perfect or not");
+System.out.println("Enter a number to check whether it is prime or not");
 Scanner s = new Scanner(System.in);
 n = s.nextInt();
 System.out.println("The inputted number is : "+n);
-for(int i = 1; i < n; i ++) {
+for(int i = 2; i <= (n/2); i ++) {
 	if(n%i == 0) {
-		sum = sum + i;
+		flag = 1;
+		break;
 	}
 }
-if(sum == n) {
-	System.out.println(n+" is a perfect number");
+
+if(flag == 1) {
+	System.out.println(n+" is not a prime number");
 }
 else {
-	System.out.println(n+" is not a perfect number");
+	System.out.println(n+" is a prime number");
 }
 
 
