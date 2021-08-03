@@ -4,28 +4,19 @@ import java.util.Scanner;
 
 public class Day6 {
 	static int n;
-	static int flag =0;
+	static int sum =0,rev;
 public static void main(String[] args) {
-System.out.println("Enter a number to check whether it is prime or not");
+System.out.println("Enter a number to find it's reverse");
 Scanner s = new Scanner(System.in);
 n = s.nextInt();
 System.out.println("The inputted number is : "+n);
-for(int i = 2; i <= (n/2); i ++) {
-	if(n%i == 0) {
-		flag = 1;
-		break;
-	}
+while(n>0) {
+	rev = n%10;
+	sum = sum*10+rev;
+	n = n/10;
 }
 
-if(flag == 1) {
-	System.out.println(n+" is not a prime number");
-}
-else {
-	System.out.println(n+" is a prime number");
-}
-
-
-
+System.out.println("The reverse of the number is "+sum);
 
 
 
