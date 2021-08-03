@@ -3,34 +3,31 @@ package com.day6.java;
 import java.util.Scanner;
 
 public class Day6 {
+	static int n;
+	static int sum =0;
 public static void main(String[] args) {
-	int a = 0;
-	int b = 1;
-	int n,i;
-	int sum = 0;
-	System.out.println("Enter the range of fibonacci series");
-	Scanner s = new Scanner(System.in);
-	n = s.nextInt();
-	if(n==1) {
-		System.out.println(a);
+System.out.println("Enter a number to check whether it is perfect or not");
+Scanner s = new Scanner(System.in);
+n = s.nextInt();
+System.out.println("The inputted number is : "+n);
+for(int i = 1; i < n; i ++) {
+	if(n%i == 0) {
+		sum = sum + i;
 	}
-	else if(n==2) {
-			System.out.print(a);
-			System.out.print(" "+b);
-		}
-		else {
-			System.out.print(a);
-			System.out.print(" "+b);	
-			for(i=3;i<=n;i++) {
-				sum = a+b;
-				System.out.print(" "+sum);
-				a=b;
-				b=sum;
-				
-				
-			}
-		}
-	
-	}
+}
+if(sum == n) {
+	System.out.println(n+" is a perfect number");
+}
+else {
+	System.out.println(n+" is not a perfect number");
+}
+
+
+
+
+
+
+
+}
 
 }
